@@ -1,0 +1,60 @@
+import pandas as pd
+
+
+#Leer json de Hechos
+
+path = r'D:\Documentos\Universidad\3. IA\Manipulacion de datos\\'
+
+file1 = 'Hechos.json'
+
+df = pd.read_json(path + file1)
+
+df
+
+
+#Leer archivos csv
+
+file2 = 'Alumnos.csv'
+
+alumnos_df = pd.read_csv(path + file2, sep = ';')
+
+alumnos_df
+
+
+file3 = 'Docentes.csv'
+
+docentes_df = pd.read_csv(path + file3, sep = ';')
+
+docentes_df
+
+
+file4 = 'Materias.csv'
+
+materias_df = pd.read_csv(path + file4, sep = ';')
+
+materias_df
+
+
+
+
+#Crear un solo DataFrame
+
+
+#Unión de la tabla de docentes y la tabla de hechos
+
+merged_inner1 = pd.merge(docentes_df,df)
+merged_inner1
+
+
+#Unión de la tabla de alumnos y la tabla de hechos
+
+merged_inner2 = pd.merge(alumnos_df,df)
+merged_inner2
+
+
+#Unión de la tabla de materias y la tabla de hechos
+
+merged_inner3 = pd.merge(materias_df,df)
+merged_inner3
+
+

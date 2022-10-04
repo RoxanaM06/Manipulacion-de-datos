@@ -1,8 +1,6 @@
-ID;Nombre;Apellido;Facultad
+IDDocente;Nombre;Apellido;Facultad
 1;Jose;Martinez;Ingenieria
 2;Andres;Flores;Ingenieria
 3;Maria;Ayestas;Ingenieria
-4;Patricia;Ochoa;Ciencias Económicas
-5;Luis;Flores;Ciencias Económicas
-;;;
-;;;
+4;Patricia;Ochoa;Ciencias Economicas
+5;Luis;Flores;Ciencias Economicas
