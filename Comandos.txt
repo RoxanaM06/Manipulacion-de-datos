@@ -39,6 +39,8 @@ materias_df
 
 #Crear un solo DataFrame
 
+df.merge(alumnos_df, on = "IDAlumnos").merge(materias_df, on = "IDMaterias").merge(docentes_df, on = "IDDocente")
+
 
 #Unión de la tabla de docentes y la tabla de hechos
 
