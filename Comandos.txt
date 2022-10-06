@@ -12,7 +12,7 @@ df = pd.read_json(path + file1)
 df
 
 
-#Leer archivos csv
+#Leer csv de alumnos
 
 file2 = 'Alumnos.csv'
 
@@ -21,12 +21,16 @@ alumnos_df = pd.read_csv(path + file2, sep = ';')
 alumnos_df
 
 
+#Leer csv de docentes
+
 file3 = 'Docentes.csv'
 
 docentes_df = pd.read_csv(path + file3, sep = ';')
 
 docentes_df
 
+
+#Leer csv de materias
 
 file4 = 'Materias.csv'
 
@@ -37,26 +41,30 @@ materias_df
 
 
 
-#Crear un solo DataFrame
+#Creación de un único DataFrame
 
-df.merge(alumnos_df, on = "IDAlumnos").merge(materias_df, on = "IDMaterias").merge(docentes_df, on = "IDDocente")
-
-
-#Unión de la tabla de docentes y la tabla de hechos
-
-merged_inner1 = pd.merge(docentes_df,df)
-merged_inner1
+df_total = df.merge(alumnos_df, on = "IDAlumnos").merge(materias_df, on = "IDMaterias").merge(docentes_df, on = "IDDocente")
+df_total
 
 
-#Unión de la tabla de alumnos y la tabla de hechos
 
-merged_inner2 = pd.merge(alumnos_df,df)
-merged_inner2
+#Notas por alumno y asignatura
 
-
-#Unión de la tabla de materias y la tabla de hechos
-
-merged_inner3 = pd.merge(materias_df,df)
-merged_inner3
+df_total.groupby(['IDAlumnos','NombreAlumno', 'nom_asignatura'])[['nota']].max()
 
 
+
+#Promedio de notas por alumno
+
+promedios = df_total.groupby(['IDAlumnos', 'NombreAlumno'])[['nota']].mean()
+promedios
+
+
+#Alumno con mayor promedio
+
+promedios.max()
+
+
+#Alumno con menor promedio
+
+promedios.min()
