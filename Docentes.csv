@@ -1,4 +1,4 @@
-IDDocente;Nombre;Apellido;Facultad
+IDDocente;NombreDocente;ApellidoDocente;Facultad
 1;Jose;Martinez;Ingenieria
 2;Andres;Flores;Ingenieria
 3;Maria;Ayestas;Ingenieria

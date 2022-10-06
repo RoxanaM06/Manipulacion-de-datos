@@ -1,4 +1,4 @@
-IDAlumnos;Nombre;Apellido;correo
+IDAlumnos;NombreAlumno;ApellidoAlumno;correo
 1;Paola;Lopez;plopez@unah.hn
 2;Mario;Gonzalez;mariog@unah.hn
 3;Maria;Perez;maria.perez@unah.hn
